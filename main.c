@@ -1,8 +1,8 @@
 #include <stdio.h>
-//#include <all-structs.h>
-//#include <search-and-filter.h>
-//#include <delete.h>
-//#include <sort.h>
+#include "all-structs.h"
+#include "search-and-filter.h"
+#include "delete.h"
+#include "sort.h"
 
 struct menu
 {
