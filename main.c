@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "all-structs.h"
 #include "search-and-filter.h"
-#include "delete.h"
+#include "add-and-delete.h"
 #include "sort.h"
 
 struct menu
