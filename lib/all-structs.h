@@ -1,29 +1,29 @@
-struct instructor{
+typedef struct{
   char *name;
-};
+}instructor;
 
-struct grade{
+typedef struct{
   char *name;
   double value;
-};
+}grade;
 
-struct Subject{
+typedef struct{
   char *name;
   double general_grade;
-  struct grade *grades;
-  struct instructor *Instructor;
-};
+  grade *grades;
+  instructor *Instructor;
+}Subject;
 
-struct Parents{
+typedef struct{
   char *name,*role,*contact;
-};
+}Parent;
 
 
-struct Student{
+typedef struct{
   // Name , Faculty , Major , class , subjects, gpa , achievements , contact , address , parents
   char *name,*faculty,*major,*achievements,*address,*contact;
   struct Parents *parents;
   struct Subject *subjects;
   int class;
   int gpa;
-};
+}Student;
