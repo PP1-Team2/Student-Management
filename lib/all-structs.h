@@ -20,10 +20,11 @@ typedef struct{
 
 
 typedef struct{
-  // Name , Faculty , Major , class , subjects, gpa , achievements , contact , address , parents
+  //ID, Name , Faculty , Major , class , subjects, gpa , achievements , contact , address , parents
   char *name,*faculty,*major,*achievements,*address,*contact;
   struct Parents *parents;
   struct Subject *subjects;
   int class;
   int gpa;
+  int id;
 }Student;
