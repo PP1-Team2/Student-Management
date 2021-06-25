@@ -28,3 +28,6 @@ typedef struct{
   int gpa;
   int id;
 }Student;
+
+
+void initialize(Student);
