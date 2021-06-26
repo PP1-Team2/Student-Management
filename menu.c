@@ -1,7 +1,6 @@
-
 #include <stdio.h>
 #include <stdlib.h>
-#include "lib\menu.h"
+#include "lib/menu.h"
 
 void main_menu()
 {
@@ -18,7 +17,7 @@ void main_menu()
   int x;
   scanf("%d",&x);
 
-  if (x==0) return 0;
+  if (x==0) return ;
   if (x==1) {
 
   }

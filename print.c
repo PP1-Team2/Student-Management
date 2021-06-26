@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "lib\print.h"
+#include "lib/print.h"
 
 void print_all(){
 

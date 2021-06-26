@@ -2,6 +2,6 @@
 #include "lib/menu.h"
 
 int main(){
-menu_main();
+main_menu();
 return 0;
 }
