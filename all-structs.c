@@ -34,7 +34,7 @@ void initialize_Subject(Subject *subject)
 void initialize_Student(Student *student)
 {
   //ID, Name , Faculty , Major , class , subjects, gpa , contact , address , parents
-  stuent->id=(char*)calloc(9,sizeof(char));
+  student->id=(char*)calloc(9,sizeof(char));
   student->name=(char*)calloc(20,sizeof(char));
   student->faculty=(char*)calloc(25,sizeof(char));
   student->major=(char*)calloc(25,sizeof(char));
