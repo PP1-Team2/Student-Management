@@ -26,7 +26,6 @@ typedef struct{
   Subject *subjects;
   int class;
   int gpa;
-  int id;
 }Student;
 
 
