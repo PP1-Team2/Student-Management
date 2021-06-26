@@ -1,66 +1,67 @@
 #include "lib/parsing.h"
-#include "all-structs.h"
+#include "lib/all-structs.h"
 #include <string.h>
+#include <ctype.h>
 
-void init(char *orig,char *tmp,int *id)
+void init(char *orig,char (*tmp)[50],int *id)
 {
-  tmp[id]='\n';
-  strcpy(orig,tmp);
-  for(int j=0;j<=id;j++)tmp[j]='';
-  id=0;
+  *tmp[*id]='\n';
+  strcpy(orig,*tmp);
+  for(int j=0;j<=*id;j++)*tmp[j]=' ';
+  *id=0;
 }
 
-void init_subjects(char *tmp,int *id)
+void init_subjects(Subject *orig,char (*tmp)[50],int *id)
 {
-  tmp[id]='\n';
+  *tmp[*id]='\n';
   char subj[12];
   int id_2=0;
   int count=0;
-  for(int j=0;j<strlen(tmp);j++)
+  for(int j=0;j<strlen(*tmp);j++)
   {
-    if(tmp[j]==',')
+    if(*tmp[j]==',')
     {
       subj[id_2]='\n';
-      strcpy(student.subjects[count],subj);
+      strcpy(orig[count].name,subj);
       for(int j1=0;j1<=id_2;j1++)subj[j1]=0;
       id_2=0;
       count++;
     }
-    else subj[id2++]=tmp[j];
+    else subj[id_2++]=*tmp[j];
   }
   subj[id_2]='\n';
-  strcpy(student.subjects[count],subj);
+  strcpy(orig[count].name,subj);
   for(int j1=0;j1<=id_2;j1++)subj[j1]=0;
   id_2=0;
   count++;
-  id=0;
+  *id=0;
 }
 
 
-void init_parents(char *tmp,int *id)
+void init_parents(Parent *orig,char (*tmp)[50],int *id)
 {
-  tmp[id]='\n';
+  *tmp[*id]='\n';
   char parents[42];
   int id_2=0;
   int count=0;
-  for(int j=0;j<strlen(tmp);j++)
+  for(int j=0;j<strlen(*tmp);j++)
   {
-    if(tmp[j]==',')
+    if(*tmp[j]==',')
     {
-      subj[id_2]='\n';
-      strcpy(student.parents[count],subj);
+      parents[id_2]='\n';
+      strcpy(orig[count].name,parents);
       for(int j1=0;j1<=id_2;j1++)parents[j1]=0;
       id_2=0;
       count++;
     }
-    else parents[id2++]=tmp[j];
+    else parents[id_2++]=*tmp[j];
   }
   parents[id_2]='\n';
-  strcpy(student.parents[count],subj);
+  strcpy(orig[count].name,parents);
   for(int j1=0;j1<=id_2;j1++)parents[j1]=0;
   id_2=0;
   count++;
-  id=0;
+  *id=0;
 }
 
 Student parse_student(char *string)
@@ -77,23 +78,23 @@ Student parse_student(char *string)
     {
       if(cnt==1)
       {
-        init(&student.id,&tmp,&id);
+        init(student.id,&tmp,&id);
       }
       else if(cnt==2)
       {
-        init(&student.name,&tmp,&id);
+        init(student.name,&tmp,&id);
       }
       else if(cnt==3)
       {
-        init(&student.faculty,&tmp,&id);
+        init(student.faculty,&tmp,&id);
       }
       else if(cnt==4)
       {
-        init(&student.major,&tmp,&id);
+        init(student.major,&tmp,&id);
       }
       else if(cnt==5)
       {
-        init_subjects(&tmp,&id);
+        init_subjects(student.subjects,&tmp,&id);
       }
       else if(cnt==6)
       {
@@ -101,7 +102,7 @@ Student parse_student(char *string)
         else
         {
           int id_2=0;
-          student.gpa=0.0
+          student.gpa=0.0;
           while(tmp[id_2]!='.')
           {
             student.gpa=student.gpa*10+(tmp[id_2]-'0');
@@ -120,11 +121,11 @@ Student parse_student(char *string)
       }
       else if(cnt==7)
       {
-        init(&student.contact,tmp,&id)
+        init(student.contact,&tmp,&id);
       }
       else
       {
-
+        init_parents(student.parents,&tmp,&id);
       }
 
 
