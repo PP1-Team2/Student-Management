@@ -1,17 +1,17 @@
 typedef struct{
   char *name;
-}instructor;
+}Instructor;
 
 typedef struct{
   char *name;
   double value;
-}grade;
+}Grade;
 
 typedef struct{
   char *name;
   double general_grade;
-  grade *grades;
-  instructor *Instructor;
+  Grade *grades;
+  Instructor *instructor;
 }Subject;
 
 typedef struct{
@@ -20,14 +20,18 @@ typedef struct{
 
 
 typedef struct{
-  //ID, Name , Faculty , Major , class , subjects, gpa , achievements , contact , address , parents
-  char *name,*faculty,*major,*achievements,*address,*contact;
-  struct Parents *parents;
-  struct Subject *subjects;
+  //ID, Name , Faculty , Major , class , subjects, gpa , contact , address , parents
+  char *name,*faculty,*major,*address,*contact;
+  Parent *parents;
+  Subject *subjects;
   int class;
   int gpa;
   int id;
 }Student;
 
 
-void initialize(Student);
+void initialize_Student(Student*);
+void initialize_Parent(Parent*);
+void initialize_Subject(Subject*);
+void initialize_Instructor(Instructor*);
+void initialize_Grade(Grade*);
