@@ -21,7 +21,7 @@ typedef struct{
 
 typedef struct{
   //ID, Name , Faculty , Major , class , subjects, gpa , contact , address , parents
-  char *name,*faculty,*major,*address,*contact;
+  char *id,*name,*faculty,*major,*address,*contact;
   Parent *parents;
   Subject *subjects;
   int class;

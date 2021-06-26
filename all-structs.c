@@ -34,12 +34,13 @@ void initialize_Subject(Subject *subject)
 void initialize_Student(Student *student)
 {
   //ID, Name , Faculty , Major , class , subjects, gpa , contact , address , parents
+  stuent->id=(char*)calloc(9,sizeof(char));
   student->name=(char*)calloc(20,sizeof(char));
   student->faculty=(char*)calloc(25,sizeof(char));
   student->major=(char*)calloc(25,sizeof(char));
   student->subjects=(Subject*)calloc(7,sizeof(Subject));
   for(int i=0;i<7;i++)initialize_Subject(&student->subjects[i]);
-  student->gpa=-1; //Unknown
+  student->gpa=-1.0; //Unknown
   student->contact=(char*)calloc(20,sizeof(char));
   student->address=(char*)calloc(50,sizeof(char));
   student->parents=(Parent*)calloc(2,sizeof(Parent));
