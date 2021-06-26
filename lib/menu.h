@@ -1,5 +1,1 @@
-typedef struct{
-  char *name;
-}menu;
-
-void menu_main();
+void main_menu();
