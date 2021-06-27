@@ -33,6 +33,7 @@ void print_all(){
       if(strlen(str)<=1)break;
       Student *st=parse_student(str);
       print_student(st);
+      fflush(stdout);
       memset(str,0,sizeof(str));
     }
 
@@ -40,5 +41,5 @@ void print_all(){
     free(str);
     str = NULL;
     fclose(fptr);
-    
+
 }

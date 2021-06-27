@@ -22,8 +22,9 @@ void main_menu()
     case 1:
       system("clear");
       print_all();
+      break;
     case 2:
-      
+
     case 3:
 
     case 4:
@@ -31,7 +32,7 @@ void main_menu()
     case 5:
 
     case 6:
-     return;
+      return;
 
   }
   printf("Type something for coming back to menu!\n");
