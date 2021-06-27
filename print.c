@@ -40,4 +40,5 @@ void print_all(){
     free(str);
     str = NULL;
     fclose(fptr);
+    
 }
