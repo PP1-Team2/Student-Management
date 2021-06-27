@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lib/menu.h"
+#include "lib/print.h"
 
 void main_menu()
 {
@@ -16,7 +17,7 @@ void main_menu()
   scanf("%d",&x);
   switch(x){
     case 1:
-
+      print_all();
     case 2:
 
     case 3:
