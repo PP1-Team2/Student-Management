@@ -14,10 +14,10 @@ void initialize_Grade(Grade *grade)
   //grade=(Grade*)calloc(1,sizeof(Grade));
   grade->name=(char*)calloc(25,sizeof(char));
 }
+
 void initialize_Instructor(Instructor *instructor)
 {
-  instructor=(Instructor*)calloc(1,sizeof(Grade));
-  instructor->name=(char*)calloc(20,sizeof(char));
+  instructor=(Instructor*)calloc(1,sizeof(Instructor));
 }
 
 void initialize_Subject(Subject *subject)
@@ -56,4 +56,47 @@ void push_back(Student *students,Student *student)
   //
   int length = sizeof(students)/sizeof(Student);
   students[length-1]=*student;
+  uninitialize_Student(student);
+}
+
+void uninitialize_Instructor(Instructor *instructor)
+{
+  free(instructor);
+}
+void uninitialize_Grade(Grade *grade)
+{
+  free(grade->name);
+  //free(grade);
+}
+
+void uninitialize_Subject(Subject *subject)
+{
+    //subject=(Subject*)calloc(1,sizeof);
+    free(subject->name);
+    uninitialize_Instructor(subject->instructor);
+    for(int i=0;i<=20;i++)uninitialize_Grade(&subject->grades[i]);
+    free(subject->grades);
+}
+
+void uninitialize_Parent(Parent *parent)
+{
+  free(parent->name);
+  free(parent->role);
+  free(parent->contact);
+  //free(parent);
+}
+
+void uninitialize_Student(Student *student)
+{
+  free(student->id);
+  free(student->name);
+  free(student->faculty);
+  free(student->major);
+  for(int i=0;i<7;i++)uninitialize_Subject(&student->subjects[i]);
+  free(student->subjects);
+  free(student->contact);
+  free(student->address);
+  for(int i=0;i<2;i++)uninitialize_Parent(&student->parents[i]);
+  free(student->parents);
+  free(student);
 }

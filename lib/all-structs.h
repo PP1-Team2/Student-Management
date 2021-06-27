@@ -1,9 +1,10 @@
 #ifndef INSTRUCTOR
 #define INSTRUCTOR
 typedef struct{
-  char *name;
+  char name[20];
 }Instructor;
 void initialize_Instructor(Instructor*);
+void uninitialize_Instructor(Instructor*);
 #endif
 
 #ifndef GRADE
@@ -13,6 +14,7 @@ typedef struct{
   double value;
 }Grade;
 void initialize_Grade(Grade*);
+void uninitialize_Grade(Grade*);
 #endif
 
 #ifndef SUBJECT
@@ -25,6 +27,7 @@ typedef struct{
   Instructor *instructor;
 }Subject;
 void initialize_Subject(Subject*);
+void uninitialize_Subject(Subject*);
 #endif
 
 #ifndef PARENT
@@ -34,6 +37,7 @@ typedef struct{
   char *name,*role,*contact;
 }Parent;
 void initialize_Parent(Parent*);
+void uninitialize_Parent(Parent*);
 #endif
 
 #ifndef STUDENT
@@ -48,5 +52,6 @@ typedef struct{
 }Student;
 
 void initialize_Student(Student*);
+void uninitialize_Student(Student*);
 void push_back(Student *,Student *);
 #endif
