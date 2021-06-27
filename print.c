@@ -4,16 +4,42 @@
 #include "lib/print.h"
 #include "lib/all-structs.h"
 #include "lib/parsing.h"
+#include "lib/array.h"
 
 void print_student(Student *student)
 {
   printf("ID:%s    Name and Surname:%s      Faculty and Major:%s %s      Subjects:",student->id,student->name,student->faculty
 ,student->major);
   for(int i=0;i<2;i++)printf("%s, ",student->subjects[i].name);
-  printf("   GPA:%lf    Contact:%s\nParents:",student->gpa,student->contact);
+  if(student->gpa==-1.0)printf("   GPA:-    ");
+  else printf("   GPA:%lf    ",student->gpa);
+  printf("Contact:%s\nParents:",student->contact);
   for(int i=0;i<2;i++)printf("%s, ",student->parents[i].name);
   puts("");
   puts("------------------------------------------------------------------------------------------");
+}
+
+/*
+
+void print_list(struct node *head)
+{
+  struct node *ptr=&head;
+  ptr=head->next;
+  while(ptr!=NULL)
+  {
+	 print_student(ptr->el);
+	 ptr=ptr->next;
+  }
+}
+*/
+
+
+void print_array(Student *students,int n)
+{
+  for(int i=0;i<n;i++)
+  {
+    print_student(&students[i]);
+  }
 }
 
 void print_all(){
@@ -33,8 +59,9 @@ void print_all(){
       if(strlen(str)<=1)break;
       Student *st=parse_student(str);
       print_student(st);
+      uninitialize_Student(st);
       fflush(stdout);
-      memset(str,0,sizeof(str));
+      memset(str,0,sizeof(*str));
     }
 
     /* Free the allocated memory */
