@@ -3,7 +3,7 @@
 
 void initialize_Parent(Parent *parent)
 {
-  parent=(Parent*)calloc(1,sizeof(Parent));
+  //parent=(Parent*)calloc(1,sizeof(Parent));
   parent->name=(char*)calloc(25,sizeof(char));
   parent->role=(char*)calloc(25,sizeof(char));
   parent->contact=(char*)calloc(25,sizeof(char));
@@ -23,7 +23,7 @@ void initialize_Instructor(Instructor *instructor)
 void initialize_Subject(Subject *subject)
 {
   //subject=(Subject*)calloc(1,sizeof);
-  subject->name=(char*)calloc(20,sizeof(char));
+  subject->name=(char*)calloc(22,sizeof(char));
   initialize_Instructor(subject->instructor);
   subject->grades=(Grade*)calloc(21,sizeof(Grade));
   for(int i=0;i<=20;i++)initialize_Grade(&subject->grades[i]);
