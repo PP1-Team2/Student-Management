@@ -44,7 +44,7 @@ typedef struct{
   Parent *parents;
   Subject *subjects;
   int class;
-  int gpa;
+  double gpa;
 }Student;
 
 void initialize_Student(Student*);
