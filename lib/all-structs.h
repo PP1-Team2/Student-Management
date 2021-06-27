@@ -10,7 +10,7 @@ void uninitialize_Instructor(Instructor*);
 #ifndef GRADE
 #define GRADE
 typedef struct{
-  char *name;
+  char name[25];
   double value;
 }Grade;
 void initialize_Grade(Grade*);
@@ -21,10 +21,10 @@ void uninitialize_Grade(Grade*);
 #define SUBJECT
 
 typedef struct{
-  char *name;
+  char name[22];
   double general_grade;
-  Grade *grades;
-  Instructor *instructor;
+  Grade grades[20];
+  Instructor instructor[1];
 }Subject;
 void initialize_Subject(Subject*);
 void uninitialize_Subject(Subject*);
@@ -34,7 +34,7 @@ void uninitialize_Subject(Subject*);
 #define PARENT
 
 typedef struct{
-  char *name,*role,*contact;
+  char name[25],role[25],contact[25];
 }Parent;
 void initialize_Parent(Parent*);
 void uninitialize_Parent(Parent*);
@@ -44,12 +44,17 @@ void uninitialize_Parent(Parent*);
 #define STUDENT
 typedef struct{
   //ID, Name , Faculty , Major , class , subjects, gpa , contact , address , parents
-  char *id,*name,*faculty,*major,*address,*contact;
-  Parent *parents;
-  Subject *subjects;
+  char id[9],name[20],faculty[25],major[25],address[50],contact[20];
+  Parent parents[2];
+  Subject subjects[7];
   int class;
   double gpa;
 }Student;
+
+typedef struct{
+  Student *students;
+  int size;
+}array;
 
 void initialize_Student(Student*);
 void uninitialize_Student(Student*);

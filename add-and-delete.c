@@ -5,20 +5,15 @@
 #include <stdio.h>
 
 void add(Student *all_students) {
-  //adding memory to our dynamical array
-  int size = sizeof(all_students);
-  int new_size = size + sizeof(Student);
-	all_students = realloc(all_students,new_size);
-  //
-  int length = sizeof(all_students)/sizeof(Student);
+
 
    //adding new student to file
 
 	printf("Enter Student ID (must be 8 digits):");
-	scanf("%s", all_students[length-1].id);
+	//scanf("%s", all_students[length-1].id);
   printf("Enter Full Name of Student (Name and Surname) (make sure you wrote the name with capital letter): ");
-	scanf("%s", all_students[length-1].name);
-  
+	//scanf("%s", all_students[length-1].name);
+
 
 
 	//fp = fopen("/Users/User/Desktop/student_management/student_info.dat", "ab");
