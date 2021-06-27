@@ -48,4 +48,5 @@ typedef struct{
 }Student;
 
 void initialize_Student(Student*);
+void push_back(Student *,Student *);
 #endif

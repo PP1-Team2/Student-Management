@@ -46,3 +46,14 @@ void initialize_Student(Student *student)
   student->parents=(Parent*)calloc(2,sizeof(Parent));
   for(int i=0;i<2;i++)initialize_Parent(&student->parents[i]);
 }
+
+void push_back(Student *students,Student *student)
+{
+  //adding memory to our dynamical array
+  int size = sizeof(students);
+  int new_size = size + sizeof(Student);
+	students = realloc(students,new_size);
+  //
+  int length = sizeof(students)/sizeof(Student);
+  students[length-1]=*student;
+}
