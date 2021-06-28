@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "lib/sort.h"
 
 
 int checksubject(Subject *a,Subject *b)
@@ -46,6 +47,8 @@ int cmp(Student *a,Student *b)
   if(a->number_of_subjects!=0)
   {
     if(a->number_of_subjects!=b->number_of_subjects)return 0;
+    sort_subjects_by_string(a->subjects,a->number_of_subjects);
+    sort_subjects_by_string(b->subjects,a->number_of_subjects);
     for(int i=0;i<(a->number_of_subjects);i++)
     {
      if(checksubject(&a->subjects[i],&b->subjects[i])==0)return 0;

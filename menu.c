@@ -430,6 +430,7 @@ void main_menu()
       filter_menu();
       break;
     case 6:
+      printf("See you!\n", );
       return;
 
   }
