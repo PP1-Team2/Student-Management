@@ -13,14 +13,14 @@ array input_array()
       printf("Not Found");
       exit(0);
   }
-  char *str = NULL;
+  char str[200];
   array all_students;
   all_students.students=malloc(sizeof(Student));
   all_students.size=1;
   while(!feof(fptr))
   {
     size_t size = 200;
-    getline(&str, &size, fptr);
+    fgets(str, size, fptr);
     if(strlen(str)<=1)break;
     Student *st=parse_student(str);
     push_back(&all_students.students,st,&all_students.size);
@@ -29,9 +29,6 @@ array input_array()
     memset(str,0,sizeof(str));
   }
   all_students.size--;
-  /* Free the allocated memory */
-  free(str);
-  str = NULL;
   fclose(fptr);
   return all_students;
 }

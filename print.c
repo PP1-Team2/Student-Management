@@ -35,12 +35,12 @@ void print_all(){
         printf("Not Found");
         exit(0);
     }
-    char *str = NULL;
+    char str[200];
     int size=0;
     while(!feof(fptr))
     {
       size_t size = 200;
-      getline(&str, &size, fptr);
+      fgets(str, size, fptr);
       if(strlen(str)<=1)break;
       Student *st=parse_student(str);
       print_student(st);
@@ -49,9 +49,6 @@ void print_all(){
       memset(str,0,sizeof(*str));
     }
 
-    /* Free the allocated memory */
-    free(str);
-    str = NULL;
     fclose(fptr);
 
 }
