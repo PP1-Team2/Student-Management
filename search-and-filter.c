@@ -35,6 +35,10 @@ int cmp(Student *a,Student *b)
   {
     if(strcmp(a->contact,b->contact)!=0)return 0;
   }
+  if(a->class!=0)
+  {
+    if(a->class!=b->class)return 0;
+  }
   if(a->gpa!=-2.0)
   {
     if(a->gpa!=b->gpa)return 0;
