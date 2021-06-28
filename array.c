@@ -35,3 +35,13 @@ array input_array()
   fclose(fptr);
   return all_students;
 }
+
+void element_delete(Student *students,int *size,int id)
+{
+  for(int i=id;i<(*size)-1;i++)
+  {
+    students[i]=students[i+1];
+  }
+  free(&students[(*size)-1]);
+  (*size)--;
+}
