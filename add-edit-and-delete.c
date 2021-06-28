@@ -9,7 +9,7 @@
 
 void add(Student *student)
 {
-  //sort_subjects_by_string(student->subjects,student->number_of_subjects);
+  sort_subjects_by_string(student->subjects,student->number_of_subjects);
   array students=input_array();
   students.size++;
 	push_back(&students.students,student,&students.size);
@@ -24,10 +24,6 @@ void edit(Student *student,Student *edited)
   sort_subjects_by_string(student->subjects,student->number_of_subjects);
   array students=input_array();
   int n=students.size;
-  for(int i=0;i<n;i++)
-  {
-    sort_subjects_by_string(students.students[i].subjects,students.students[i].number_of_subjects);
-  }
   for(int i=0;i<n;i++)
   {
     if(cmp(student,&(students.students[i])))
