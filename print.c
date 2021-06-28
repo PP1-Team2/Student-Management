@@ -8,8 +8,7 @@
 
 void print_student(Student *student)
 {
-  printf("ID:%s    Name and Surname:%s      Faculty and Major:%s %s      Subjects:",student->id,student->name,student->faculty
-,student->major);
+  printf("ID:%s    Name and Surname:%s      Faculty and Major:%s %s   Class:%d\nSubjects:",student->id,student->name,student->faculty,student->major,student->class);
   for(int i=0;i<(student->number_of_subjects);i++)printf("%s, ",student->subjects[i].name);
   if(student->gpa==-1.0)printf("   GPA:-    ");
   else printf("   GPA:%lf    ",student->gpa);
@@ -55,7 +54,7 @@ void print_all(){
 
 void fprint_student(FILE *ptr,Student *student)
 {
-  fprintf(ptr,"{ID:%s Name:%s Faculty:%s Major:%s Subjects:",student->id,student->name,student->faculty,student->major);
+  fprintf(ptr,"{ID:%s Name:%s Faculty:%s Major:%s Class:%d Subjects:",student->id,student->name,student->faculty,student->major,student->class);
 
   int n=student->number_of_subjects;
   printf("%d\n",n );
