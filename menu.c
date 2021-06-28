@@ -49,7 +49,7 @@ void type_entity(Student *temp)
 
 void type_entity_1(Student *temp)
 {
-  printf("----------You can filter by using any combination of paratemeters. Answer on next questions for being able to filter.------------\n\n");
+  printf("----------You can filter by using any combination of parameters. Answer on next questions for being able to filter.------------\n\n");
   printf(">> Do you want to filter by using the ID of the student?\nType y for yes or any symbol for no\n");
   char tmp[2];
   scanf("%s",&tmp);
@@ -117,7 +117,7 @@ void add_menu()
   Student temp;
   temp.gpa=-2.0;
   ////////////
-  printf("-------------Enter the needed parameters for adding the student entity-----------------\n");
+  printf("-------------Enter the required parameters for adding the student entity-----------------\n");
   type_entity(&temp);
   add(&temp);
   printf("Succesfully added!\n");
@@ -125,7 +125,7 @@ void add_menu()
 
 void edit_menu(Student *student)
 {
-  printf("-------------Enter the needed parameters for editing the entity-----------------\n");
+  printf("-------------Enter the required parameters for editing the entity-----------------\n");
   Student temp;
   temp.gpa=-2.0;
   temp.class=0;
@@ -161,15 +161,15 @@ void filter_menu()
   type_entity_1(&temp);
   array all_students=input_array();
 
-  array needed=filter(&all_students,&temp);
-  if(needed.size==0)
+  array required=filter(&all_students,&temp);
+  if(required.size==0)
   {
     printf("Not found! There is no such student!\n");
   }
-  else print_array(needed.students,needed.size);
+  else print_array(required.students,required.size);
 
   free(all_students.students);
-  free(needed.students);
+  free(required.students);
 
 }
 
@@ -189,7 +189,7 @@ void search_menu()
   free(all_students.students);
   if(strcmp(res.name,"Not found! There is no such student!\n")==0)return ;
   char tmp[2];
-  printf(">> Type e for editing the item , type d for deleting the item or something else for backing the menu\n");
+  printf(">> Type e for editing this item , type d for deleting the item or something else for backing the menu\n");
   scanf("%s",&tmp);
   if(tmp[0]=='e')
   {

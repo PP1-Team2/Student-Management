@@ -10,7 +10,7 @@ array input_array()
   FILE *fptr;
   fptr=fopen("database/students.dat", "r");
   if (fptr==NULL){
-      printf("Not Found");
+      printf("PROBLEM OCCURED WHILE OPENING FILE\n");
       exit(0);
   }
   char str[200];

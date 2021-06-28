@@ -32,7 +32,7 @@ void print_all(){
     FILE *fptr;
     fptr=fopen("database/students.dat", "r");
     if (fptr==NULL){
-        printf("Not Found");
+        printf("PROBLEM OCCURED WHILE OPENING FILE\n");
         exit(0);
     }
     char str[200];
@@ -72,7 +72,7 @@ void fprint_students(array *students)
   FILE *fptr = fopen("database/students.dat", "w+");
   if(fptr==NULL)
   {
-    printf("Problems with opening\n");
+    printf("PROBLEM OCCURED WHILE OPENING FILE\n");
     return ;
   }
   int n=students->size;
