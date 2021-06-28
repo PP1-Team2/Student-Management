@@ -7,7 +7,7 @@ main.o: main.c
 menu.o: menu.c
 	gcc -c menu.c
 
-add-and-edit-delete.o: add-edit-and-delete.c
+add-edit-and-delete.o: add-edit-and-delete.c
 	gcc -c add-edit-and-delete.c
 
 print.o: print.c
