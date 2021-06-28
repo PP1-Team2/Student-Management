@@ -236,7 +236,7 @@ void type_entity_1(Student *temp)
 
 void add_menu()
 {
-  system("clear");
+  system("cls");
   //Initialize
   Student temp;
   temp.gpa=-2.0;
@@ -278,7 +278,7 @@ void delete_menu(Student *student)
 
 void filter_menu()
 {
-  system("clear");
+  system("cls");
   Student temp;
   temp.gpa=-2.0;
   temp.class=0;
@@ -299,7 +299,7 @@ void filter_menu()
 
 void search_menu()
 {
-  system("clear");
+  system("cls");
   //Initialize
   Student temp;
   temp.gpa=-2.0;
@@ -332,7 +332,7 @@ void search_menu()
 
 void sort_menu()
 {
-   system("clear");
+   system("cls");
    printf(">> To sort all students by ID, please type 1\n");
    printf(">> To sort all students by Full Name, please type 2\n");
    printf(">> To sort all students by Faculty, please type 3\n");
@@ -344,7 +344,7 @@ void sort_menu()
    int x;
    scanf("%d",&x);
    if(x>=8 || x==0)return ;
-   system("clear");
+   system("cls");
    printf(">> To sort all students in increasement order, please type 1\n");
    printf(">> To sort all students in decreasement order, please type 2\n");
    int xx;
@@ -383,7 +383,7 @@ void sort_menu()
 void main_menu()
 {
  while(1) {
-  system("clear");
+  system("cls");
   printf("============Welcome to the student management system of ADA university!==========\n");
   puts("");
   printf(">>  To list all students, please type 1\n");
@@ -397,7 +397,7 @@ void main_menu()
   if(x>=7)return ;
   switch(x){
     case 1:
-      system("clear");
+      system("cls");
       print_all();
       break;
     case 2:
