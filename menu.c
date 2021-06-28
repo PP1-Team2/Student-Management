@@ -7,38 +7,114 @@
 #include "lib/array.h"
 #include "lib/search-and-filter.h"
 #include "lib/add-edit-and-delete.h"
+#include "lib/error-checking.h"
 
 void type_entity(Student *temp)
 {
-  printf(">> Type the ID of the student (must be 8 digits)\n");
-  scanf("%s",&temp->id);
+  printf(">> Type the ID of the student (must be 9 digits)\n");
+  while (1) {
+    scanf("%s",&temp->id);
+    if(!check_id(&temp->id))break;
+    else
+    {
+      printf("Please, type again !\n");
+    }
+  }
 
-  printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
-  scanf("%s",&temp->name);
+
+
+  printf(">> Type the full name of the student as the format (Firstname_Surname)\n");
+  printf("You should not exceed the maximum limit:59\n");
+  while (1) {
+    scanf("%s",&temp->name);
+    if(!check_name(&temp->name))break;
+    else
+    {
+      printf("Please, type again !\n");
+    }
+  }
 
   printf(">> Type the abbrevation of the faculty of the student\n");
-  scanf("%s",&temp->faculty);
+  printf("You should not exceed the maximum limit:24\n");
+  while (1) {
+    scanf("%s",&temp->faculty);
+    if(!check_faculty(&temp->faculty))break;
+    else
+    {
+      printf("Please, type again !\n");
+    }
+  }
 
   printf(">> Type the abbrevation of major of the student\n");
-  scanf("%s",&temp->major);
+  printf("You should not exceed the maximum limit:24\n");
+  while (1) {
+    scanf("%s",&temp->major);
+    if(!check_major(&temp->major))break;
+    else
+    {
+      printf("Please, type again !\n");
+    }
+  }
 
   printf(">> Type the class of the student\n");
   scanf("%d",&temp->class);
 
   printf(">> Type the contact (mobile number) of the student\n");
-  scanf("%s",&temp->contact);
-  printf(">> Type the name of father of the student\n");
-  scanf("%s",&temp->parents[0]);
-  printf(">> Type the name of mother of the student\n");
-  scanf("%s",&temp->parents[1]);
+  printf("You should not exceed the maximum limit:20\n");
+  while (1) {
+    scanf("%s",&temp->contact);
+    if(!check_contact(&temp->contact))break;
+    else
+    {
+      printf("Please, type again !\n");
+    }
+  }
+  printf(">> Type the name of father of the student as the format (Firstname_Surname)\n");
+  printf("You should not exceed the maximum limit:25\n");
+  while (1) {
+    scanf("%s",&temp->parents[0].name);
+    if(!check_parent(&temp->parents[0].name))break;
+    else
+    {
+      printf("Please, type again !\n");
+    }
+  }
+
+
+  printf(">> Type the name of mother of the student as the format (Firstname_Surname)\n");
+  printf("You should not exceed the maximum limit:25\n");
+  while (1) {
+    scanf("%s",&temp->parents[1].name);
+    if(!check_parent(&temp->parents[1].name))break;
+    else
+    {
+      printf("Please, type again !\n");
+    }
+  }
 
   printf(">> Type the GPA of the student as a fractional number (Max GPA is 4.0) \n");
-  scanf("%lf",&temp->gpa);
+  while (1) {
+    scanf("%lf",&temp->gpa);
+    if(!check_gpa(temp->gpa))break;
+    else
+    {
+      printf("Please, type again !\n");
+    }
+  }
 
   int n;
 
   printf(">> Type the number of studied subjects of the student\n");
-  scanf("%d",&temp->number_of_subjects);
+  printf("You should not exceed the maximum limit:40\n");
+  while(1)
+  {
+   scanf("%d",&temp->number_of_subjects);
+   if(!check_numsubj(temp->number_of_subjects))break;
+   else
+   {
+    printf("Please, type again !\n");
+   }
+  }
   n=temp->number_of_subjects;
   printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
   for(int i=0;i<n;i++)
@@ -55,29 +131,60 @@ void type_entity_1(Student *temp)
   scanf("%s",&tmp);
   if(tmp[0]=='y')
   {
-   printf("~Type the ID of the student (must be 8 digits)~\n");
-   scanf("%s",&temp->id);
+   printf("~Type the ID of the student (must be 9 digits)~\n");
+   while (1) {
+     scanf("%s",&temp->id);
+     if(!check_id(&temp->id))break;
+     else
+     {
+       printf("Please, type again !\n");
+     }
+   }
   }
   printf(">> Do you want to filter by using the full name of the student?\nType y for yes or any symbol for no\n");
   scanf("%s",&tmp);
   if(tmp[0]=='y')
   {
    printf("~Type the Full Name of the student as format (FirstName_Surname)~\n");
-   scanf("%s",&temp->name);
+   printf("You should not exceed the maximum limit:59\n");
+   while (1) {
+     scanf("%s",&temp->name);
+     if(!check_name(&temp->name))break;
+     else
+     {
+       printf("Please, type again !\n");
+     }
+   }
   }
   printf(">> Do you want to filter by using the Name of Faculty of the student?\nType y for yes or any symbol for no\n");
   scanf("%s",&tmp);
   if(tmp[0]=='y')
   {
    printf("~Type the abbrevation of the Faculty of the student~\n");
-   scanf("%s",&temp->faculty);
+   printf("You should not exceed the maximum limit:24\n");
+   while (1) {
+     scanf("%s",&temp->faculty);
+     if(!check_faculty(&temp->faculty))break;
+     else
+     {
+       printf("Please, type again !\n");
+     }
+   }
   }
   printf(">> Do you want to filter by using the Name of Major of the student?\nType y for yes or any symbol for no\n");
   scanf("%s",&tmp);
   if(tmp[0]=='y')
   {
    printf("~Type the abbrevation of the Major of the student~\n");
-   scanf("%s",&temp->major);
+   printf("You should not exceed the maximum limit:24\n");
+   while (1) {
+     scanf("%s",&temp->major);
+     if(!check_major(&temp->major))break;
+     else
+     {
+       printf("Please, type again !\n");
+     }
+   }
   }
   printf(">> Do you want to filter by using the class of the student?\nType y for yes or any symbol for no\n");
   scanf("%s",&tmp);
@@ -91,14 +198,31 @@ void type_entity_1(Student *temp)
   if(tmp[0]=='y')
   {
    printf("~Type the mobile number of the student~\n");
-   scanf("%s",&temp->contact);
+   printf("You should not exceed the maximum limit:20\n");
+   while (1) {
+     scanf("%s",&temp->contact);
+     if(!check_contact(&temp->contact))break;
+     else
+     {
+       printf("Please, type again !\n");
+     }
+   }
   }
   printf(">> Do you want to filter by using the studied subjects of the student?\nType y for yes or any symbol for no\n");
   scanf("%s",&tmp);
   if(tmp[0]=='y')
   {
    printf("~Type the number of the studied subjects~\n");
-   scanf("%d",&temp->number_of_subjects);
+   printf("You should not exceed the maximum limit:40\n");
+   while(1)
+   {
+    scanf("%d",&temp->number_of_subjects);
+    if(!check_numsubj(temp->number_of_subjects))break;
+    else
+    {
+     printf("Please, type again !\n");
+    }
+   }
    int n=temp->number_of_subjects;
    printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
    for(int i=0;i<n;i++)
@@ -219,7 +343,7 @@ void sort_menu()
    printf(">> To exit from the sort menu, please type 8\n");
    int x;
    scanf("%d",&x);
-   if(x==8)return ;
+   if(x>=8 || x==0)return ;
    system("clear");
    printf(">> To sort all students in increasement order, please type 1\n");
    printf(">> To sort all students in decreasement order, please type 2\n");
@@ -251,6 +375,7 @@ void sort_menu()
 
   }
   print_array(all.students,all.size);
+  fprint_students(&all);
   free(all.students);
   fflush(stdout);
 }
@@ -269,6 +394,7 @@ void main_menu()
   printf(">>  To exit from the program, please type 6\n");
   int x;
   scanf("%d",&x);
+  if(x>=7)return ;
   switch(x){
     case 1:
       system("clear");
