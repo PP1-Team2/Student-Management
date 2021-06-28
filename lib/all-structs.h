@@ -44,7 +44,8 @@ void uninitialize_Parent(Parent*);
 #define STUDENT
 typedef struct{
   //ID, Name , Faculty , Major , class , subjects, gpa , contact , address , parents
-  char id[9],name[60],faculty[25],major[25],address[50],contact[20];
+  char id[11],name[60],faculty[25],major[25],address[50],contact[20];
+  //Todo add address
   Parent parents[2];
   Subject subjects[40];
   int number_of_subjects;
