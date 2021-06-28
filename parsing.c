@@ -12,7 +12,7 @@ void init(char *orig,char (*tmp)[60],int *id)
   *id=0;
 }
 
-void init_subjects(Subject *orig,char (*tmp)[60],int *id)
+void init_subjects(Subject *orig,char (*tmp)[60],int *id,int *size)
 {
   char subj[60];
   int id_2=0;
@@ -32,6 +32,7 @@ void init_subjects(Subject *orig,char (*tmp)[60],int *id)
   for(int j1=0;j1<=id_2;j1++)subj[j1]=0;
   id_2=0;
   count++;
+  *size=count;
   memset(*tmp,0,sizeof(*tmp));
   *id=0;
 }
@@ -96,7 +97,7 @@ Student *parse_student(char *string)
       }
       else if(cnt==5)
       {
-        init_subjects(student->subjects,&tmp,&id);
+        init_subjects(student->subjects,&tmp,&id,&student->number_of_subjects);
       }
 
       else if(cnt==6)
