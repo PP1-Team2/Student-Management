@@ -234,10 +234,6 @@ void search_menu()
 
 void sort_menu()
 {
-  /*
-  while(1)
-  {
-  */
    system("clear");
    printf(">> To sort all students by ID, please type 1\n");
    printf(">> To sort all students by Full Name, please type 2\n");
@@ -279,13 +275,6 @@ void sort_menu()
   print_array(all.students,all.size);
   free(all.students);
   fflush(stdout);
-  /*
-  printf("Type something for coming back to sort menu!\n");
-
-  char xc;
-  scanf(" %c", &xc);
-  */
- //}
 }
 
 void main_menu()
@@ -328,6 +317,6 @@ void main_menu()
   char xx;
   scanf(" %c", &xx);
 
-  }
+ }
 
 }
