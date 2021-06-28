@@ -39,6 +39,5 @@ void element_delete(Student *students,int *size,int id)
   {
     students[i]=students[i+1];
   }
-  //free(&students[(*size)-1]);
   (*size)--;
 }
