@@ -4,6 +4,27 @@
 #include "lib/sort.h"
 #include "lib/print.h"
 
+void sort_subjects_by_string(Subject *subjects,int size)
+{
+   for (int i=0; i<size-1; i++)
+   {
+     for (int j=i+1; j < size; j++){
+
+        if (strcmp(subjects[i].name,subjects[j].name)>0)
+        {
+                Subject temp=subjects[i];
+                subjects[i]=subjects[j];
+                subjects[j]=temp;
+        }
+      }
+    }
+
+
+
+
+}
+
+
 
 void sort_by_string(Student *students,int x,int size,int xx)
 {
