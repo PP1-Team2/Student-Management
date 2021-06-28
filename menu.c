@@ -187,6 +187,7 @@ void search_menu()
   if(strcmp(res.name,"Not found! There is no such student!\n")==0)printf("Not found! There is no such student!\n");
   else print_student(&res);
   free(all_students.students);
+  if(strcmp(res.name,"Not found! There is no such student!\n")==0)return ;
   char tmp[2];
   printf(">> Type e for editing the item , type d for deleting the item or something else for backing the menu\n");
   scanf("%s",&tmp);
