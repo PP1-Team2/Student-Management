@@ -97,10 +97,19 @@ Student *parse_student(char *string)
       }
       else if(cnt==5)
       {
+        int id_2=0;
+        student->class=0;
+        while(id_2<id)
+        {
+          student->class=(student->class)*10+(tmp[id_2++]-'0');
+        }
+        id=0;
+      }
+      else if(cnt==6)
+      {
         init_subjects(student->subjects,&tmp,&id,&student->number_of_subjects);
       }
-
-      else if(cnt==6)
+      else if(cnt==7)
       {
         if(tmp[0]=='-')student->gpa=-1.0; //Unknown
         else
@@ -129,7 +138,7 @@ Student *parse_student(char *string)
         id=0;
         memset(tmp,0,sizeof(tmp));
       }
-      else if(cnt==7)
+      else if(cnt==8)
       {
         init(student->contact,&tmp,&id);
       }
