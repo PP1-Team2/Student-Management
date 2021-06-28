@@ -1,5 +1,5 @@
-student-management: main.o add-and-delete.o menu.o print.o all-structs.o parsing.o sort.o array.o
-	gcc main.o add-and-delete.o menu.o print.o all-structs.o parsing.o sort.o array.o -o student-management
+student-management: main.o add-and-delete.o menu.o print.o all-structs.o parsing.o sort.o array.o search-and-filter.o
+	gcc main.o add-and-delete.o menu.o print.o all-structs.o parsing.o sort.o array.o search-and-filter.o -o student-management
 
 main.o: main.c
 	gcc -c main.c
@@ -24,6 +24,9 @@ sort.o: sort.c
 
 array.o: array.c
 	gcc -c array.c
+
+search-and-filter.o: search-and-filter.c
+	gcc -c search-and-filter.c
 
 clean:
 	rm -r *.o
