@@ -23,16 +23,7 @@ array input_array()
     getline(&str, &size, fptr);
     if(strlen(str)<=1)break;
     Student *st=parse_student(str);
-
-    all_students.students[all_students.size-1]=*st;
-    all_students.students = (Student*)realloc(all_students.students,(all_students.size+1)*(sizeof(Student)));
-    all_students.size++;
-    if(all_students.students==NULL)
-    {
-      printf("Failed reallocation\n");
-      exit(0);
-    }
-    //push_back(students,st);
+    push_back(&all_students.students,st,&all_students.size);
     uninitialize_Student(st);
     fflush(stdout);
     memset(str,0,sizeof(str));
