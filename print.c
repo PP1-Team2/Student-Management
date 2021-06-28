@@ -10,7 +10,7 @@ void print_student(Student *student)
 {
   printf("ID:%s    Name and Surname:%s      Faculty and Major:%s %s      Subjects:",student->id,student->name,student->faculty
 ,student->major);
-  for(int i=0;i<2;i++)printf("%s, ",student->subjects[i].name);
+  for(int i=0;i<(student->number_of_subjects);i++)printf("%s, ",student->subjects[i].name);
   if(student->gpa==-1.0)printf("   GPA:-    ");
   else printf("   GPA:%lf    ",student->gpa);
   printf("Contact:%s\nParents:",student->contact);
