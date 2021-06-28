@@ -9,15 +9,13 @@
 
 void add(Student *student)
 {
-  sort_subjects_by_string(student->subjects,student->number_of_subjects);
+  //sort_subjects_by_string(student->subjects,student->number_of_subjects);
   array students=input_array();
-	students.size=1;
+  students.size++;
 	push_back(&students.students,student,&students.size);
 	students.size--;
 	fprint_students(&students);
 	free(students.students);
-	free(student);
-
 }
 
 
