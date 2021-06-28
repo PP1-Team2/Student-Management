@@ -120,6 +120,7 @@ void add_menu()
   printf("-------------Enter the needed parameters for adding the student entity-----------------\n");
   type_entity(&temp);
   add(&temp);
+  printf("Succesfully added!\n");
 }
 
 void edit_menu(Student *student)
@@ -211,12 +212,13 @@ void sort_menu()
    printf(">> To sort all students by Full Name, please type 2\n");
    printf(">> To sort all students by Faculty, please type 3\n");
    printf(">> To sort all students by Major, please type 4\n");
-   printf(">> To sort all students by GPA, please type 5\n");
-   printf(">> To sort all students by Mobile number, please type 6\n");
-   printf(">> To exit from the sort menu, please type 7\n");
+   printf(">> To sort all students by Class, please type 5\n");
+   printf(">> To sort all students by GPA, please type 6\n");
+   printf(">> To sort all students by Mobile number, please type 7\n");
+   printf(">> To exit from the sort menu, please type 8\n");
    int x;
    scanf("%d",&x);
-   if(x==7)return ;
+   if(x==8)return ;
    system("clear");
    printf(">> To sort all students in increasement order, please type 1\n");
    printf(">> To sort all students in decreasement order, please type 2\n");
@@ -237,9 +239,12 @@ void sort_menu()
       sort_by_string(all.students,xx,all.size,x);
       break;
     case 5:
+      sort_by_class(all.students,xx,all.size);
+      break;
+    case 6:
      sort_by_gpa(all.students,xx,all.size);
      break;
-    case 6:
+    case 7:
      sort_by_string(all.students,xx,all.size,x);
      break;
 
@@ -286,8 +291,8 @@ void main_menu()
   }
   printf("Type something for coming back to menu!\n");
   fflush(stdout);
-  char xx;
-  scanf(" %c", &xx);
+  char xx[100];
+  scanf("%s", &xx);
 
  }
 
