@@ -1,20 +1,20 @@
-{ID:0013859 Name:Huseyn_Hajiyev Faculty:SITE Major:CS Subjects:PP1,Info-Systems,Calculus1,MyADA GPA:2.5 Contact:+994514801800 Parents:Elnur_Hajiyev,Ilhama_Hajiyeva}
-{ID:0092949 Name:Mehdi_Ibadov Faculty:SITE Major:CE Subjects:PP2,Info-Systems,Calculus2,SOCS GPA:3.5 Contact:+99451965800 Parents:Hacı_Dadashov,Zeyneb_Zumrudova}
-{ID:0021929 Name:Lincoln_Oliver Faculty:BBA Major:BA Subjects:Macro-Economics,Info-Systems,Business-Analysis,MyADA GPA:- Contact:+5496712228 Parents:Jack_Sawyer,Jonathan_Christain}
-{ID:0012345 Name:Katherine_Hodgson Faculty:SITE Major:CS Subjects:PP1,Info-Systems,Calculus2,Robotics,MyADA GPA:4.0 Contact:+994514801800 Parents:John_Locke,Anna_Davis}
-{ID:0204040 Name:Jennifer_Henry Faculty:BBA Major:BA Subjects:Info-Systems,Business-Analysis,Micro-Economics,MyADA GPA:2.0 Contact:+5490096780 Parents:Jack_Philipps,Jeniffer_Liza}
-{ID:0095952 Name:Roger_Simond Faculty:LLB Major:Law Subjects:History,Info-Systems,Global-Law,MyADA GPA:3.8 Contact:+1796452260 Parents:Alex_Davis,Olivia_Chris}
-{ID:0034567 Name:Sayid_Jarrah Faculty:BBA Major:BA Subjects:Commercial-Law,Info-Systems,Calculus1,MyADA GPA:2.6 Contact:+1464262607 Parents:Farez_Baghar,Soraya_Ava}
-{ID:0034523 Name:Chin_Sun Faculty:SITE Major:CE Subjects:Robotics,Info-Systems,Calculus1,MyADA GPA:3.9 Contact:+149566216 Parents:Sun_Ming,Chen_Pak}
-{ID:0010404 Name:Gamze_Caglar Faculty:LLB Major:Law Subjects:History,Info-Systems,Global-Law,MyADA GPA:2.4 Contact:+90517851800 Parents:Ferit_Ozalan,Melisa_Duman}
+{ID:0013859 Name:Huseyn_Hajiyev Faculty:SITE Major:CS Class:2024 Subjects:PP1,Info-Systems,Calculus1,MyADA GPA:2.5 Contact:+994514801800 Parents:Elnur_Hajiyev,Ilhama_Hajiyeva}
+{ID:0092949 Name:Mehdi_Ibadov Faculty:SITE Major:CE Class:2024 Subjects:PP2,Info-Systems,Calculus2,SOCS GPA:3.5 Contact:+99451965800 Parents:Haci_Dadashov,Zeyneb_Zumrudova}
+{ID:0021929 Name:Lincoln_Oliver Faculty:BBA Major:BA Class:2023 Subjects:Macro-Economics,Info-Systems,Business-Analysis,MyADA GPA:- Contact:+5496712228 Parents:Jack_Sawyer,Jonathan_Christain}
+{ID:0012345 Name:Katherine_Hodgson Faculty:SITE Major:CS Class:2024 Subjects:PP1,Info-Systems,Calculus2,Robotics,MyADA GPA:4.0 Contact:+994514801800 Parents:John_Locke,Anna_Davis}
+{ID:0204040 Name:Jennifer_Henry Faculty:BBA Major:BA Class:2024 Subjects:Info-Systems,Business-Analysis,Micro-Economics,MyADA GPA:2.0 Contact:+5490096780 Parents:Jack_Philipps,Jeniffer_Liza}
+{ID:0095952 Name:Roger_Simond Faculty:LLB Major:Law Class:2024 Subjects:History,Info-Systems,Global-Law,MyADA GPA:3.8 Contact:+1796452260 Parents:Alex_Davis,Olivia_Chris}
+{ID:0034567 Name:Sayid_Jarrah Faculty:BBA Major:BA Class:2024 Subjects:Commercial-Law,Info-Systems,Calculus1,MyADA GPA:2.6 Contact:+1464262607 Parents:Farez_Baghar,Soraya_Ava}
+{ID:0034523 Name:Chin_Sun Faculty:SITE Major:CE Class:2022 Subjects:Robotics,Info-Systems,Calculus1,MyADA GPA:3.9 Contact:+149566216 Parents:Sun_Ming,Chen_Pak}
+{ID:0010404 Name:Gamze_Caglar Faculty:LLB Major:Law Class:2022 Subjects:History,Info-Systems,Global-Law,MyADA GPA:2.4 Contact:+90517851800 Parents:Ferit_Ozalan,Melisa_Duman}
 {ID:0050404 Name:Sakura_Akemi Faculty:SPIA Major:IA Subjects:Human-Resources,Info-Systems,Politics,MyADA GPA:3.4 Contact:+9043241821 Parents:Akiro_Haruto,Aimi_Akemi}
-{ID:0095873 Name:Muhammet_Saglam Faculty:SITE Major:CE Subjects:PP1,Info-Systems,Robotics,MyADA GPA:1.8 Contact:+905314808643 Parents:Ugur_Tuncay,Zahra_Sonmez}
+{ID:0095873 Name:Muhammet_Saglam Faculty:SITE Major:CE Class:2023 Subjects:PP1,Info-Systems,Robotics,MyADA GPA:1.8 Contact:+905314808643 Parents:Ugur_Tuncay,Zahra_Sonmez}
 {ID:0010040 Name:Farid_Rzayev Faculty:BBA Major:BA Subjects:Commercial-Law,Info-Systems, Finance,MyADA GPA:- Contact:+9945148458 Parents:Ilham_Sadigov,Narmin_Maisova}
-{ID:0098023 Name:Samir_Qurbanov Faculty:SPIA Major:IA Subjects:Human-Resources,Global-Conflicts,Politics,MyADA GPA:2.6 Contact:+99455488109 Parents:Zafar_Farhadov,Sveta_Gadimova}
-{ID:0010234 Name:Khadija_Huseynova Faculty:SITE Major:CS Subjects:PP2,Robotics,Calculus2,MyADA GPA:3.4 Contact:+994504878125 Parents:Iman_Hasanov,Khumar_Karimova}
-{ID:0013842 Name:Dmitri_Egor Faculty:LLB Major:Law Subjects:Global-Law,Info-Systems,History,MyADA GPA:4.0 Contact:+9667815554 Parents:Baghar_Zahid,Fatima_Farah}
-{ID:0003234 Name:Evgenii_Edik Faculty:SITE Major:CE Subjects:Robotics,Info-Systems,Calculus2,MyADA GPA:3.0 Contact:+9965885568 Parents:Egor_Michail,Sara_Michail}
-{ID:0000424 Name:Maria_Anya Faculty:SITE Major:CS Subjects:PP2,Info-Systems,Calculus1,MyADA GPA:2.9 Contact:+4778136597 Parents:Leonid_Dima,Annika_Dima}
-{ID:0040404 Name:Svetlana_Korah Faculty:BBA Major:BA Subjects:Commercial-Law,Info-Systems,Finance,MyADA GPA:3.1 Contact:+2587771198 Parents:Michail_Inessa,Alyona_Dima}
-{ID:0059584 Name:Andrea_Rakitic Faculty:SITE Major:CE Subjects:PP1,Info-Systems,Calculus2,MyADA GPA:2.9 Contact:+7151401784 Parents:Maxim_Adrian,Anastasia_Maxim}
-{ID:0010290 Name:Benjamin_Vilho Faculty:BBA Major:BA Subjects:Business-Administration,Info-Systems,Finance,MyADA GPA:2.0 Contact:+3535881078 Parents:Erik_Erikson,Elli_Dima}
+{ID:0098023 Name:Samir_Qurbanov Faculty:SPIA Major:IA Class:2024 Subjects:Human-Resources,Global-Conflicts,Politics,MyADA GPA:2.6 Contact:+99455488109 Parents:Zafar_Farhadov,Sveta_Gadimova}
+{ID:0010234 Name:Khadija_Huseynova Faculty:SITE Major:CS Class:2024 Subjects:PP2,Robotics,Calculus2,MyADA GPA:3.4 Contact:+994504878125 Parents:Iman_Hasanov,Khumar_Karimova}
+{ID:0013842 Name:Dmitri_Egor Faculty:LLB Major:Law Class:2024 Subjects:Global-Law,Info-Systems,History,MyADA GPA:4.0 Contact:+9667815554 Parents:Baghar_Zahid,Fatima_Farah}
+{ID:0003234 Name:Evgenii_Edik Faculty:SITE Major:CE Class:2024 Subjects:Robotics,Info-Systems,Calculus2,MyADA GPA:3.0 Contact:+9965885568 Parents:Egor_Michail,Sara_Michail}
+{ID:0000424 Name:Maria_Anya Faculty:SITE Major:CS Class:2024 Subjects:PP2,Info-Systems,Calculus1,MyADA GPA:2.9 Contact:+4778136597 Parents:Leonid_Dima,Annika_Dima}
+{ID:0040404 Name:Svetlana_Korah Faculty:BBA Major:BA Class:2024 Subjects:Commercial-Law,Info-Systems,Finance,MyADA GPA:3.1 Contact:+2587771198 Parents:Michail_Inessa,Alyona_Dima}
+{ID:0059584 Name:Andrea_Rakitic Faculty:SITE Major:CE Class:2024 Subjects:PP1,Info-Systems,Calculus2,MyADA GPA:2.9 Contact:+7151401784 Parents:Maxim_Adrian,Anastasia_Maxim}
+{ID:0010290 Name:Benjamin_Vilho Faculty:BBA Major:BA Class:2024 Subjects:Business-Administration,Info-Systems,Finance,MyADA GPA:2.0 Contact:+3535881078 Parents:Erik_Erikson,Elli_Dima}
