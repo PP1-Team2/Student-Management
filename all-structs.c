@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 void initialize_Parent(Parent *parent)
 {
   //parent=(Parent*)calloc(1,sizeof(Parent));
@@ -49,40 +48,6 @@ void initialize_Student(Student *student)
   //for(int i=0;i<2;i++)initialize_Parent(&student->parents[i]);
 }
 
-void push_back(Student *students,Student *student)
-{
-  //adding memory to our dynamical array
-   printf("Length:%d %d\n",sizeof(*students),sizeof(Student));
-   int length = sizeof(*students)/sizeof(Student);
-   printf("Length1:%d\n", length);
-   students = (Student*)realloc(students,(length+1)*(sizeof(Student)));
-   if(students==NULL)
-   {
-     printf("Failed reallocation\n");
-     return ;
-   }
-   else
-   {
-     printf("OK!\n");
-     length = sizeof(*students)/sizeof(Student);
-     printf("Length2:%d\n", length);
-     return ;
-   }
-  // length++;
-   students[length-1]=*student;
-   //for(int i=0;i<length;i++)uninitialize_Student(&students[i]);
-   //free(students);
-   /*
-	 students = (Student*)calloc(length+1,sizeof(Student));
-   length++;
-   for(int i=0;i<length;i++)initialize_Student(&students[i]);
-  //
-  length = sizeof(*students)/sizeof(Student);
-  printf("Length:%d\n",length);
-
-  */
-//  uninitialize_Student(student);
-}
 
 void uninitialize_Instructor(Instructor *instructor)
 {
@@ -124,4 +89,17 @@ void uninitialize_Student(Student *student)
   //for(int i=0;i<2;i++)uninitialize_Parent(&student->parents[i]);
   //free(student->parents);
   free(student);
+}
+
+void push_back(Student **students,Student *student,int *size)
+{
+  //adding memory to our dynamical array
+  (*students)[(*size)-1]=*student;
+  *students = (Student*)realloc(*students,((*size)+1)*(sizeof(Student)));
+  (*size)++;
+  if(students==NULL)
+  {
+    printf("Failed reallocation\n");
+    exit(0);
+  }
 }

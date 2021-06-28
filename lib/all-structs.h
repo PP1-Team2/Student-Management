@@ -44,9 +44,10 @@ void uninitialize_Parent(Parent*);
 #define STUDENT
 typedef struct{
   //ID, Name , Faculty , Major , class , subjects, gpa , contact , address , parents
-  char id[9],name[20],faculty[25],major[25],address[50],contact[20];
+  char id[9],name[60],faculty[25],major[25],address[50],contact[20];
   Parent parents[2];
-  Subject subjects[7];
+  Subject subjects[40];
+  int number_of_subjects;
   int class;
   double gpa;
 }Student;
@@ -58,5 +59,5 @@ typedef struct{
 
 void initialize_Student(Student*);
 void uninitialize_Student(Student*);
-void push_back(Student *,Student *);
+void push_back(Student **,Student *,int *);
 #endif
