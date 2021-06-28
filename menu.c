@@ -32,7 +32,7 @@ void type_entity(Student *temp)
   printf(">> Type the name of mother of the student\n");
   scanf("%s",&temp->parents[1]);
 
-  printf(">> Type the GPA of the student as a fractional number \n");
+  printf(">> Type the GPA of the student as a fractional number (Max GPA is 4.0) \n");
   scanf("%lf",&temp->gpa);
 
   int n;

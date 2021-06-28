@@ -1,63 +1,69 @@
-/*
-for (int i = 0; i < strlen(s1->student_id); i++) {
-  if (!(isdigit(s1->student_id[i]))) {   //error check (it should be digits)
-    count++;
-    break;
+#include <ctype.h>
+#include <string.h>
+
+int check_id(char *id)
+{
+  if(strlen(id)!=8)
+  {
+    printf("Mistake! The size of ID should be 8\n"); //size error
+    return 1;
   }
-}
-if (count != 0 || strlen(s1->student_id)!=8)  // ID must have 8 digits
-{
-  printf("Invalid ID number\nPlease, enter new ID number:");
-  scanf("%s", &s1->student_id);
-}
-else
-{
-  break;
-}
-count = 0;
-}
-
-
-
-for (int i=0; i < strlen(s1->student_info.name); i++) {
-  if (!(isalpha(*s1->student_info.name))) {
-    count++;
-    break;
-  }
-
-}
-char ch = s1->student_info.name[0]; //inside of struct of struct
-if (count != 0 || (!isupper(ch)))
-{
-  printf("Invalid Name\nPlease, enter new student name (make sure you wrote the name with capital letter):");
-  scanf("%s", &s1->student_info.name);
-}
-else
-{
-  break;
-}
-count = 0;
-}
-
-
-while (count == 0) {
-  for (int i = 0; i < strlen(s1->student_info.surname); i++) {
-    if (!(isalpha(*s1->student_info.surname))) {   //error check
-      count++;
-      break;
+  for (int i = 0; i < strlen(*id); i++) {
+    if (!(isdigit(id[i])) {   //error check (it should be digits)
+      printf("Mistake! ID should consists from digits\n");
+      return 1;
     }
-
-  }
-  char ch= s1->student_info.surname[0];
-  if (count != 0 || (!isupper(ch)))//inside of struct of struct
-  {
-    printf("Invalid surname\nPlease, enter new surname: ");
-    scanf("%s", &s1->student_info.surname);
-  }
-  else
-  {
-    break;
-  }
-  count = 0;
+ }
+ return 0;
 }
-*/
+
+int check_name(char *name)
+{
+  for (int i=0; i < strlen(*name); i++) {
+  if (!(isalpha((*name)[i])) && (*name)[i]!='_' ) {
+    printf("Mistake! Wrong name format\n");
+    return 1;
+  }
+ }
+ int sig=0;
+ for (int i=0; i < strlen(*name); i++) {
+  if((*name)[i]=='_')sig++;
+ }
+ if(sig!=1)
+ {
+   printf("Mistake! Wrong name format\n");
+   return 1;
+ }
+ char ch = (*name)[0]; //First character
+ if ((!isupper(ch)))
+ {
+   printf("Mistake! Wrong name format\n");
+   return 1;
+ }
+ return 0;
+}
+
+int check_faculty(char *faculty)
+{
+  //Todo
+}
+
+int check_major(char *major)
+{
+  //Todo
+}
+
+int check_contact(char *number)
+{
+  //Todo
+}
+
+int check_gpa(double x)
+{
+  if(x>4.0)
+  {
+    printf("Mistake! Max GPA is 4.0!\n");
+    return 1;
+  }
+  return 0;
+}
