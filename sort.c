@@ -122,7 +122,7 @@ void sort_by_string(Student *students,int x,int size,int xx)
                students[j]=temp;
        }
      }
-      else if(xx==6)
+      else if(xx==7)
       {
        if (strcmp(students[i].contact,students[j].contact)<0)
        {
@@ -160,6 +160,40 @@ void sort_by_gpa(Student *students,int x,int size)
    {
      for (int j=i+1; j < size; j++){
           if (students[i].gpa<students[j].gpa){
+            Student temp=students[i];
+            students[i]=students[j];
+            students[j]=temp;
+         }
+     }
+   }
+ }
+
+
+}
+
+
+void sort_by_class(Student *students,int x,int size)
+{
+
+ if(x==1)
+ {
+   for (int i=0; i<size-1; i++)
+   {
+     for (int j=i+1; j < size; j++){
+          if (students[i].class > students[j].class){
+                  Student temp=students[i];
+                  students[i]=students[j];
+                  students[j]=temp;
+         }
+     }
+   }
+ }
+ if(x==2)
+ {
+   for (int i=0; i<size-1; i++)
+   {
+     for (int j=i+1; j < size; j++){
+          if (students[i].class < students[j].class){
             Student temp=students[i];
             students[i]=students[j];
             students[j]=temp;
