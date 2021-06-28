@@ -5,8 +5,122 @@
 #include "lib/print.h"
 #include "lib/sort.h"
 #include "lib/array.h"
+#include "lib/search-and-filter.h"
+
+void filter_menu()
+{
+  system("clear");
+  Student temp;
+  temp.gpa=-2.0;
+  printf("----------You can filter by using any combination of paratemeters. Answer on next questions for being able to filter.------------\n\n");
+  printf(">> Do you want to filter by using the ID of the student?\nType y for yes or any symbol for no\n");
+  char tmp[2];
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the ID of the student~\n");
+   scanf("%s",&temp.id);
+  }
+  printf(">> Do you want to filter by using the full name of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the Full Name of the student as format (FirstName_Surname)~\n");
+   scanf("%s",&temp.name);
+  }
+  printf(">> Do you want to filter by using the Name of Faculty of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the abbrevation of the Faculty of the student~\n");
+   scanf("%s",&temp.faculty);
+  }
+  printf(">> Do you want to filter by using the Name of Major of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the abbrevation of the Major of the student~\n");
+   scanf("%s",&temp.major);
+  }
+  printf(">> Do you want to filter by using the contact(mobile number) of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the mobile number of the student~\n");
+   scanf("%s",&temp.contact);
+  }
+  printf(">> Do you want to filter by using the studied subjects of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the number of the studied subjects~\n");
+   scanf("%d",&temp.number_of_subjects);
+   int n=temp.number_of_subjects;
+   printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
+   for(int i=0;i<n;i++)
+   {
+     scanf("%s",temp.subjects[i].name);
+   }
+
+  }
+  else temp.number_of_subjects=0;
+  //print_student(&temp);
+
+  array all_students=input_array();
+
+  array needed=filter(&all_students,&temp);
+  if(needed.size==0)
+  {
+    printf("Not found! There is no such student!\n");
+  }
+  else print_array(needed.students,needed.size);
+
+  //free(all_students.students);
+  //free(needed.students);
+
+}
+
+void search_menu()
+{
+  system("clear");
+  //Initialize
+  Student temp;
+  temp.gpa=-2.0;
+  ////////////
+  printf("-------------Enter the needed parameters for searching the student-----------------\n");
+  printf(">> Type the ID of the student\n");
+  scanf("%s",&temp.id);
+
+  printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
+  scanf("%s",&temp.name);
+
+  printf(">> Type the abbrevation of the faculty of the student\n");
+  scanf("%s",&temp.faculty);
+
+  printf(">> Type the abbrevation of major of the student\n");
+  scanf("%s",&temp.major);
+
+  printf(">> Type the contact (mobile number) of the student\n");
+  scanf("%s",&temp.contact);
+  int n;
+
+  printf(">> Type the number of studied subjects of the student\n");
+  scanf("%d",&temp.number_of_subjects);
+  n=temp.number_of_subjects;
+  printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
+  for(int i=0;i<n;i++)
+  {
+    scanf("%s",temp.subjects[i].name);
+  }
+  array all_students=input_array();
+  Student res=search(&all_students,&temp);
+  if(strcmp(res.name,"Not found! There is no such student!\n")==0)printf("Not found! There is no such student!\n");
+  else print_student(&res);
+  free(all_students.students);
 
 
+
+}
 
 
 void sort_menu()
@@ -90,9 +204,11 @@ void main_menu()
       sort_menu();
       break;
     case 4:
-
+      search_menu();
+      break;
     case 5:
-
+      filter_menu();
+      break;
     case 6:
       return;
 
