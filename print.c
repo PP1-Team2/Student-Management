@@ -19,21 +19,6 @@ void print_student(Student *student)
   puts("------------------------------------------------------------------------------------------");
 }
 
-/*
-
-void print_list(struct node *head)
-{
-  struct node *ptr=&head;
-  ptr=head->next;
-  while(ptr!=NULL)
-  {
-	 print_student(ptr->el);
-	 ptr=ptr->next;
-  }
-}
-*/
-
-
 void print_array(Student *students,int n)
 {
   for(int i=0;i<n;i++)
@@ -68,5 +53,39 @@ void print_all(){
     free(str);
     str = NULL;
     fclose(fptr);
+
+}
+
+void fprint_student(FILE *ptr,Student *student)
+{
+  fprintf(ptr,"{ID:%s Name:%s Faculty:%s Major:%s Subjects:",student->id,student->name,student->faculty,student->major);
+
+  int n=student->number_of_subjects;
+  printf("%d\n",n );
+  for(int i=0;i<n-1;i++)
+  {
+    fprintf(ptr,"%s,",student->subjects[i].name);
+  }
+  fprintf(ptr,"%s GPA:%lf Contact:%s Parents:%s,%s}\n",student->subjects[n-1].name,student->gpa,student->contact,student->parents[0].name,student->parents[1].name);
+
+}
+
+
+void fprint_students(array *students)
+{
+  FILE *fptr = fopen("database/students.dat", "w+");
+  if(fptr==NULL)
+  {
+    printf("Problems with opening\n");
+    return ;
+  }
+  int n=students->size;
+
+  for(int i=0;i<n;i++)
+  {
+    fprint_student(fptr,&(students->students[i]));
+  }
+
+  fclose(fptr);
 
 }
