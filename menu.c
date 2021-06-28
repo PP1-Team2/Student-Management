@@ -6,6 +6,103 @@
 #include "lib/sort.h"
 #include "lib/array.h"
 #include "lib/search-and-filter.h"
+#include "lib/add-edit-and-delete.h"
+
+
+
+void add_menu()
+{
+  system("clear");
+  //Initialize
+  Student temp;
+  temp.gpa=-2.0;
+  ////////////
+  printf("-------------Enter the needed parameters for searching the student-----------------\n");
+  printf(">> Type the ID of the student (must be 8 digits)\n");
+  scanf("%s",&temp.id);
+
+  printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
+  scanf("%s",&temp.name);
+
+  printf(">> Type the abbrevation of the faculty of the student\n");
+  scanf("%s",&temp.faculty);
+
+  printf(">> Type the abbrevation of major of the student\n");
+  scanf("%s",&temp.major);
+
+  printf(">> Type the contact (mobile number) of the student\n");
+  scanf("%s",&temp.contact);
+  printf(">> Type the name of father of the student\n");
+  scanf("%s",&temp.parents[0]);
+  printf(">> Type the name of mother of the student\n");
+  scanf("%s",&temp.parents[1]);
+  int n;
+
+  printf(">> Type the number of studied subjects of the student\n");
+  scanf("%d",&temp.number_of_subjects);
+  n=temp.number_of_subjects;
+  printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
+  for(int i=0;i<n;i++)
+  {
+    scanf("%s",temp.subjects[i].name);
+  }
+  add(&temp);
+}
+
+void edit_menu(Student *student)
+{
+  printf("-------------Enter the needed parameters for editing the entity-----------------\n");
+  Student temp;
+  temp.gpa=-2.0;
+  printf(">> Type the ID of the student (must be 8 digits)\n");
+  scanf("%s",&temp.id);
+
+  printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
+  scanf("%s",&temp.name);
+
+  printf(">> Type the abbrevation of the faculty of the student\n");
+  scanf("%s",&temp.faculty);
+
+  printf(">> Type the abbrevation of major of the student\n");
+  scanf("%s",&temp.major);
+
+  printf(">> Type the contact (mobile number) of the student\n");
+  scanf("%s",&temp.contact);
+  printf(">> Type the name of father of the student\n");
+  scanf("%s",&temp.parents[0]);
+  printf(">> Type the name of mother of the student\n");
+  scanf("%s",&temp.parents[1]);
+  int n;
+
+  printf(">> Type the number of studied subjects of the student\n");
+  scanf("%d",&temp.number_of_subjects);
+  n=temp.number_of_subjects;
+  printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
+  for(int i=0;i<n;i++)
+  {
+    scanf("%s",temp.subjects[i].name);
+  }
+  edit(student,&temp);
+  printf("------Succesfully edited !----\n");
+  return ;
+}
+
+void delete_menu(Student *student)
+{
+  printf(">> Are you sure that you want to delete this student from the system?\n");
+  printf("Type y for yes or any symbol for no\n");
+  char tmp[2];
+  scanf("%s",&tmp);
+  if(tmp[0]!='y')return;
+  else
+  {
+    delete(student);
+    printf("------Succesfully deleted !----\n");
+    return ;
+  }
+}
+
+
 
 void filter_menu()
 {
@@ -18,7 +115,7 @@ void filter_menu()
   scanf("%s",&tmp);
   if(tmp[0]=='y')
   {
-   printf("~Type the ID of the student~\n");
+   printf("~Type the ID of the student (must be 8 digits)~\n");
    scanf("%s",&temp.id);
   }
   printf(">> Do you want to filter by using the full name of the student?\nType y for yes or any symbol for no\n");
@@ -75,8 +172,8 @@ void filter_menu()
   }
   else print_array(needed.students,needed.size);
 
-  //free(all_students.students);
-  //free(needed.students);
+  free(all_students.students);
+  free(needed.students);
 
 }
 
@@ -88,7 +185,7 @@ void search_menu()
   temp.gpa=-2.0;
   ////////////
   printf("-------------Enter the needed parameters for searching the student-----------------\n");
-  printf(">> Type the ID of the student\n");
+  printf(">> Type the ID of the student (must be 8 digits)\n");
   scanf("%s",&temp.id);
 
   printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
@@ -117,6 +214,18 @@ void search_menu()
   if(strcmp(res.name,"Not found! There is no such student!\n")==0)printf("Not found! There is no such student!\n");
   else print_student(&res);
   free(all_students.students);
+  char tmp[2];
+  printf(">> Type e for editing the item , type d for deleting the item or something else for backing the menu\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='e')
+  {
+    edit_menu(&res);
+  }
+  else if(tmp[0]=='d')
+  {
+    delete_menu(&res);
+  }
+  else return;
 
 
 
@@ -199,7 +308,8 @@ void main_menu()
       print_all();
       break;
     case 2:
-
+      add_menu();
+      break;
     case 3:
       sort_menu();
       break;
