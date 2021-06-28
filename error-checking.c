@@ -138,6 +138,11 @@ int check_gpa(double x)
     printf("Mistake! Max GPA is 4.0!\n");
     return 1;
   }
+  else if(x<-1.0)
+  {
+    printf("Mistake! Min GPA is -1.0 if GPA is unknown!\n");
+    return 1;
+  }
   return 0;
 }
 

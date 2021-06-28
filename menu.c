@@ -93,6 +93,7 @@ void type_entity(Student *temp)
   }
 
   printf(">> Type the GPA of the student as a fractional number (Max GPA is 4.0) \n");
+  printf("If GPA is unknown , type -1.00!!!\n");
   while (1) {
     scanf("%lf",&temp->gpa);
     if(!check_gpa(temp->gpa))break;
@@ -193,6 +194,22 @@ void type_entity_1(Student *temp)
    printf("~Type the class of the student~\n");
    scanf("%s",&temp->class);
   }
+  printf(">> Do you want to filter by using the GPA of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+    printf(">> Type the GPA of the student as a fractional number (Max GPA is 4.0) \n");
+    printf("If GPA is unknown , type -1.00!!!\n");
+    while (1) {
+      scanf("%lf",&temp->gpa);
+      if(!check_gpa(temp->gpa))break;
+      else
+      {
+        printf("Please, type again !\n");
+      }
+    }
+  }
+
   printf(">> Do you want to filter by using the contact(mobile number) of the student?\nType y for yes or any symbol for no\n");
   scanf("%s",&tmp);
   if(tmp[0]=='y')
@@ -236,7 +253,7 @@ void type_entity_1(Student *temp)
 
 void add_menu()
 {
-  system("cls");
+  system("clear");
   //Initialize
   Student temp;
   temp.gpa=-2.0;
@@ -278,7 +295,7 @@ void delete_menu(Student *student)
 
 void filter_menu()
 {
-  system("cls");
+  system("clear");
   Student temp;
   temp.gpa=-2.0;
   temp.class=0;
@@ -299,7 +316,7 @@ void filter_menu()
 
 void search_menu()
 {
-  system("cls");
+  system("clear");
   //Initialize
   Student temp;
   temp.gpa=-2.0;
@@ -332,7 +349,7 @@ void search_menu()
 
 void sort_menu()
 {
-   system("cls");
+   system("clear");
    printf(">> To sort all students by ID, please type 1\n");
    printf(">> To sort all students by Full Name, please type 2\n");
    printf(">> To sort all students by Faculty, please type 3\n");
@@ -344,9 +361,9 @@ void sort_menu()
    int x;
    scanf("%d",&x);
    if(x>=8 || x==0)return ;
-   system("cls");
-   printf(">> To sort all students in increasement order, please type 1\n");
-   printf(">> To sort all students in decreasement order, please type 2\n");
+   system("clear");
+   printf(">> To sort all students in increasing order, please type 1\n");
+   printf(">> To sort all students in decreasing order, please type 2\n");
    int xx;
    scanf("%d",&xx);
    array all=input_array();
@@ -383,7 +400,7 @@ void sort_menu()
 void main_menu()
 {
  while(1) {
-  system("cls");
+  system("clear");
   printf("============Welcome to the student management system of ADA university!==========\n");
   puts("");
   printf(">>  To list all students, please type 1\n");
@@ -397,7 +414,7 @@ void main_menu()
   if(x>=7)return ;
   switch(x){
     case 1:
-      system("cls");
+      system("clear");
       print_all();
       break;
     case 2:
