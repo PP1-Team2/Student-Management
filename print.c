@@ -20,6 +20,7 @@ void print_student(Student *student)
 
 void print_array(Student *students,int n)
 {
+  printf("Number of students:%d\n",n);
   for(int i=0;i<n;i++)
   {
     print_student(&students[i]);
