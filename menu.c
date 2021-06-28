@@ -8,7 +8,107 @@
 #include "lib/search-and-filter.h"
 #include "lib/add-edit-and-delete.h"
 
+void type_entity(Student *temp)
+{
+  printf(">> Type the ID of the student (must be 8 digits)\n");
+  scanf("%s",&temp->id);
 
+  printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
+  scanf("%s",&temp->name);
+
+  printf(">> Type the abbrevation of the faculty of the student\n");
+  scanf("%s",&temp->faculty);
+
+  printf(">> Type the abbrevation of major of the student\n");
+  scanf("%s",&temp->major);
+
+  printf(">> Type the class of the student\n");
+  scanf("%d",&temp->class);
+
+  printf(">> Type the contact (mobile number) of the student\n");
+  scanf("%s",&temp->contact);
+  printf(">> Type the name of father of the student\n");
+  scanf("%s",&temp->parents[0]);
+  printf(">> Type the name of mother of the student\n");
+  scanf("%s",&temp->parents[1]);
+
+  printf(">> Type the GPA of the student as a fractional number \n");
+  scanf("%lf",&temp->gpa);
+
+  int n;
+
+  printf(">> Type the number of studied subjects of the student\n");
+  scanf("%d",&temp->number_of_subjects);
+  n=temp->number_of_subjects;
+  printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
+  for(int i=0;i<n;i++)
+  {
+    scanf("%s",&temp->subjects[i].name);
+  }
+}
+
+void type_entity_1(Student *temp)
+{
+  printf("----------You can filter by using any combination of paratemeters. Answer on next questions for being able to filter.------------\n\n");
+  printf(">> Do you want to filter by using the ID of the student?\nType y for yes or any symbol for no\n");
+  char tmp[2];
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the ID of the student (must be 8 digits)~\n");
+   scanf("%s",&temp->id);
+  }
+  printf(">> Do you want to filter by using the full name of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the Full Name of the student as format (FirstName_Surname)~\n");
+   scanf("%s",&temp->name);
+  }
+  printf(">> Do you want to filter by using the Name of Faculty of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the abbrevation of the Faculty of the student~\n");
+   scanf("%s",&temp->faculty);
+  }
+  printf(">> Do you want to filter by using the Name of Major of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the abbrevation of the Major of the student~\n");
+   scanf("%s",&temp->major);
+  }
+  printf(">> Do you want to filter by using the class of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the class of the student~\n");
+   scanf("%s",&temp->class);
+  }
+  printf(">> Do you want to filter by using the contact(mobile number) of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the mobile number of the student~\n");
+   scanf("%s",&temp->contact);
+  }
+  printf(">> Do you want to filter by using the studied subjects of the student?\nType y for yes or any symbol for no\n");
+  scanf("%s",&tmp);
+  if(tmp[0]=='y')
+  {
+   printf("~Type the number of the studied subjects~\n");
+   scanf("%d",&temp->number_of_subjects);
+   int n=temp->number_of_subjects;
+   printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
+   for(int i=0;i<n;i++)
+   {
+     scanf("%s",&temp->subjects[i].name);
+   }
+
+  }
+  else temp->number_of_subjects=0;
+}
 
 void add_menu()
 {
@@ -17,35 +117,8 @@ void add_menu()
   Student temp;
   temp.gpa=-2.0;
   ////////////
-  printf("-------------Enter the needed parameters for searching the student-----------------\n");
-  printf(">> Type the ID of the student (must be 8 digits)\n");
-  scanf("%s",&temp.id);
-
-  printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
-  scanf("%s",&temp.name);
-
-  printf(">> Type the abbrevation of the faculty of the student\n");
-  scanf("%s",&temp.faculty);
-
-  printf(">> Type the abbrevation of major of the student\n");
-  scanf("%s",&temp.major);
-
-  printf(">> Type the contact (mobile number) of the student\n");
-  scanf("%s",&temp.contact);
-  printf(">> Type the name of father of the student\n");
-  scanf("%s",&temp.parents[0]);
-  printf(">> Type the name of mother of the student\n");
-  scanf("%s",&temp.parents[1]);
-  int n;
-
-  printf(">> Type the number of studied subjects of the student\n");
-  scanf("%d",&temp.number_of_subjects);
-  n=temp.number_of_subjects;
-  printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
-  for(int i=0;i<n;i++)
-  {
-    scanf("%s",temp.subjects[i].name);
-  }
+  printf("-------------Enter the needed parameters for adding the student entity-----------------\n");
+  type_entity(&temp);
   add(&temp);
 }
 
@@ -54,34 +127,8 @@ void edit_menu(Student *student)
   printf("-------------Enter the needed parameters for editing the entity-----------------\n");
   Student temp;
   temp.gpa=-2.0;
-  printf(">> Type the ID of the student (must be 8 digits)\n");
-  scanf("%s",&temp.id);
-
-  printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
-  scanf("%s",&temp.name);
-
-  printf(">> Type the abbrevation of the faculty of the student\n");
-  scanf("%s",&temp.faculty);
-
-  printf(">> Type the abbrevation of major of the student\n");
-  scanf("%s",&temp.major);
-
-  printf(">> Type the contact (mobile number) of the student\n");
-  scanf("%s",&temp.contact);
-  printf(">> Type the name of father of the student\n");
-  scanf("%s",&temp.parents[0]);
-  printf(">> Type the name of mother of the student\n");
-  scanf("%s",&temp.parents[1]);
-  int n;
-
-  printf(">> Type the number of studied subjects of the student\n");
-  scanf("%d",&temp.number_of_subjects);
-  n=temp.number_of_subjects;
-  printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
-  for(int i=0;i<n;i++)
-  {
-    scanf("%s",temp.subjects[i].name);
-  }
+  temp.class=0;
+  type_entity(&temp);
   edit(student,&temp);
   printf("------Succesfully edited !----\n");
   return ;
@@ -109,60 +156,8 @@ void filter_menu()
   system("clear");
   Student temp;
   temp.gpa=-2.0;
-  printf("----------You can filter by using any combination of paratemeters. Answer on next questions for being able to filter.------------\n\n");
-  printf(">> Do you want to filter by using the ID of the student?\nType y for yes or any symbol for no\n");
-  char tmp[2];
-  scanf("%s",&tmp);
-  if(tmp[0]=='y')
-  {
-   printf("~Type the ID of the student (must be 8 digits)~\n");
-   scanf("%s",&temp.id);
-  }
-  printf(">> Do you want to filter by using the full name of the student?\nType y for yes or any symbol for no\n");
-  scanf("%s",&tmp);
-  if(tmp[0]=='y')
-  {
-   printf("~Type the Full Name of the student as format (FirstName_Surname)~\n");
-   scanf("%s",&temp.name);
-  }
-  printf(">> Do you want to filter by using the Name of Faculty of the student?\nType y for yes or any symbol for no\n");
-  scanf("%s",&tmp);
-  if(tmp[0]=='y')
-  {
-   printf("~Type the abbrevation of the Faculty of the student~\n");
-   scanf("%s",&temp.faculty);
-  }
-  printf(">> Do you want to filter by using the Name of Major of the student?\nType y for yes or any symbol for no\n");
-  scanf("%s",&tmp);
-  if(tmp[0]=='y')
-  {
-   printf("~Type the abbrevation of the Major of the student~\n");
-   scanf("%s",&temp.major);
-  }
-  printf(">> Do you want to filter by using the contact(mobile number) of the student?\nType y for yes or any symbol for no\n");
-  scanf("%s",&tmp);
-  if(tmp[0]=='y')
-  {
-   printf("~Type the mobile number of the student~\n");
-   scanf("%s",&temp.contact);
-  }
-  printf(">> Do you want to filter by using the studied subjects of the student?\nType y for yes or any symbol for no\n");
-  scanf("%s",&tmp);
-  if(tmp[0]=='y')
-  {
-   printf("~Type the number of the studied subjects~\n");
-   scanf("%d",&temp.number_of_subjects);
-   int n=temp.number_of_subjects;
-   printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
-   for(int i=0;i<n;i++)
-   {
-     scanf("%s",temp.subjects[i].name);
-   }
-
-  }
-  else temp.number_of_subjects=0;
-  //print_student(&temp);
-
+  temp.class=0;
+  type_entity_1(&temp);
   array all_students=input_array();
 
   array needed=filter(&all_students,&temp);
@@ -183,32 +178,9 @@ void search_menu()
   //Initialize
   Student temp;
   temp.gpa=-2.0;
+  temp.class=0;
   ////////////
-  printf("-------------Enter the needed parameters for searching the student-----------------\n");
-  printf(">> Type the ID of the student (must be 8 digits)\n");
-  scanf("%s",&temp.id);
-
-  printf(">> Type the full name of the student as the format (Firstname_Last Name)\n");
-  scanf("%s",&temp.name);
-
-  printf(">> Type the abbrevation of the faculty of the student\n");
-  scanf("%s",&temp.faculty);
-
-  printf(">> Type the abbrevation of major of the student\n");
-  scanf("%s",&temp.major);
-
-  printf(">> Type the contact (mobile number) of the student\n");
-  scanf("%s",&temp.contact);
-  int n;
-
-  printf(">> Type the number of studied subjects of the student\n");
-  scanf("%d",&temp.number_of_subjects);
-  n=temp.number_of_subjects;
-  printf(">> Type the all studied %d subjects of the student in one line (keep one space between subjects)\n",n);
-  for(int i=0;i<n;i++)
-  {
-    scanf("%s",temp.subjects[i].name);
-  }
+  type_entity(&temp);
   array all_students=input_array();
   Student res=search(&all_students,&temp);
   if(strcmp(res.name,"Not found! There is no such student!\n")==0)printf("Not found! There is no such student!\n");
